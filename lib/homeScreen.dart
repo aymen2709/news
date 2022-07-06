@@ -73,440 +73,394 @@ class HomeScreen extends StatelessWidget {
                       height: 75,
                     ),
                     Text('Administrations ',
-                        style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20.0)),
+                        style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 20.0)),
                   ],
                 ),
                 Container(
                     margin: const EdgeInsets.all(2.0),
                     padding: const EdgeInsets.all(5.0),
-                    decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(10.0)),
+                    decoration:
+                        BoxDecoration(color: Colors.grey[200], borderRadius: BorderRadius.circular(10.0)),
                     child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10.0)),
-                        child: ExpansionTile(
-                          title: Row(
-                            children: const <Widget>[
-                              Image(
-                                image: AssetImage('assets/images/femme.png'),
-                                width: 33.0,
-                                height: 33.0,
-                              ),
-                              Text('Comment nous joindre ?',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18)),
+                        decoration:
+                            BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
+                        child: Theme(
+                          // Remove borders from ExpansionTile
+                          data: ThemeData().copyWith(dividerColor: Colors.transparent),
+                          child: ExpansionTile(
+                            title: Row(
+                              children: const <Widget>[
+                                Image(
+                                  image: AssetImage('assets/images/femme.png'),
+                                  width: 33.0,
+                                  height: 33.0,
+                                ),
+                                Text('Comment nous joindre ?',
+                                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                              ],
+                            ),
+                            children: [
+                              Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(children: [
+                                    RichText(
+                                      text: const TextSpan(
+                                        style: TextStyle(
+                                          color: Colors.black
+                                        ),
+                                        children: [
+                                          TextSpan(text: 'Adresse: ', style: TextStyle(color: Colors.grey)),
+                                          TextSpan(text: 'Avenue de la république 4011, Hammam Sousse')
+                                        ]
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 5.0,
+                                    ),
+                                    const SizedBox(
+                                      height: 5.0,
+                                    ),
+                                    Row(
+                                      children: const [
+                                        Text('Tél: ',
+                                            style: TextStyle(
+                                              color: Colors.grey,
+                                            )),
+                                        Text('73262086', style: TextStyle()),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 5.0,
+                                    ),
+                                    Row(
+                                      children: const [
+                                        Text('Fax: ',
+                                            style: TextStyle(
+                                              color: Colors.grey,
+                                            )),
+                                        Text('73262086', style: TextStyle()),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 5.0,
+                                    ),
+                                    Row(
+                                      children: const [
+                                        Text('Mail: ',
+                                            style: TextStyle(
+                                              color: Colors.grey,
+                                            )),
+                                        Text('communehsousse@topnet.tn', style: TextStyle()),
+                                      ],
+                                    ),
+                                  ]))
                             ],
                           ),
-                          children: [
-                            Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(children: [
-                                  Row(
-                                    children: const [
-                                      Text('Adresse: ',
-                                          style: TextStyle(
-                                            color: Colors.grey,
-                                          )),
+                        ))),
+                Container(
+                    margin: const EdgeInsets.all(2.0),
+                    padding: const EdgeInsets.all(5.0),
+                    decoration:
+                        BoxDecoration(color: Colors.grey[200], borderRadius: BorderRadius.circular(10.0)),
+                    child: Container(
+                        decoration:
+                            BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
+                        child: Theme(
+                          data: ThemeData().copyWith(dividerColor: Colors.transparent),
+                          child: ExpansionTile(
+                            title: Row(
+                              children: const <Widget>[
+                                Image(
+                                  image: AssetImage('assets/images/clock-gris.jpg'),
+                                  width: 35.0,
+                                  height: 35.0,
+                                ),
+                                Text('Horaire de travail',
+                                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                              ],
+                            ),
+                            children: [
+                              Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(children: [
+                                    Row(children: const [
+                                      Text('Lundi-Jeudi:', style: TextStyle(fontSize: 15)),
+                                      SizedBox(
+                                        width: 12.0,
+                                      ),
+                                      Text('8:30-12:30', style: TextStyle(fontSize: 15)),
+                                      SizedBox(
+                                        width: 14.0,
+                                      ),
                                       Text(
-                                          'Avenue de la république 4011,',
-                                          style: TextStyle()),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: const [
-                                      Text('Hammam Sousse', style: TextStyle()),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 5.0,
-                                  ),
-
-                                  Row(
-                                    children: const [
-                                      Text('Tél: ',
-                                          style: TextStyle(
-                                            color: Colors.grey,
-                                          )),
-                                      Text('73262086', style: TextStyle()),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 5.0,
-                                  ),
-
-                                  Row(
-                                    children: const [
-                                      Text('Fax: ',
-                                          style: TextStyle(
-                                            color: Colors.grey,
-                                          )),
-                                      Text('73262086', style: TextStyle()),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 5.0,
-                                  ),
-                                  Row(
-                                    children: const [
-                                      Text('Mail: ',
-                                          style: TextStyle(
-                                            color: Colors.grey,
-                                          )),
-                                      Text('communehsousse@topnet.tn',
-                                          style: TextStyle()),
-                                    ],
-                                  ),
-                                ]))
-                          ],
-                        ))),
-                Container(
-                    margin: const EdgeInsets.all(2.0),
-                    padding: const EdgeInsets.all(5.0),
-                    decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(10.0)),
-                    child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10.0)),
-                        child: ExpansionTile(
-                          title: Row(
-                            children: const <Widget>[
-                              Image(
-                                image: AssetImage('assets/images/clock-gris.jpg'),
-                                width: 35.0,
-                                height: 35.0,
-                              ),
-                              Text('Horaire de travail',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18)),
+                                        '13:30-17:30',
+                                        style: TextStyle(fontSize: 15),
+                                      ),
+                                    ]),
+                                    const SizedBox(
+                                      height: 5.0,
+                                    ),
+                                    Row(children: const [
+                                      Text(
+                                        'Vendredi:',
+                                        style: TextStyle(fontSize: 15),
+                                      ),
+                                      SizedBox(
+                                        width: 29.0,
+                                      ),
+                                      Text(
+                                        '8:30-13:00',
+                                        style: TextStyle(fontSize: 15),
+                                      ),
+                                      SizedBox(
+                                        width: 14.0,
+                                      ),
+                                      Text(
+                                        '14:30-17:30',
+                                        style: TextStyle(fontSize: 15),
+                                      ),
+                                    ]),
+                                    const SizedBox(
+                                      height: 5.0,
+                                    ),
+                                    Row(
+                                      children: const [
+                                        Text('Samedi: fermé ',
+                                            style: TextStyle(color: Colors.red, fontSize: 15)),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 5.0,
+                                    ),
+                                    Row(
+                                      children: const [
+                                        Text('Dimanche: fermé',
+                                            style: TextStyle(color: Colors.red, fontSize: 15)),
+                                      ],
+                                    ),
+                                  ]))
                             ],
                           ),
-                          children: [
-                            Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(children: [
-                                  Row(children: const [
-                                    Text(
-                                        'Lundi-Jeudi:',
-                                        style: TextStyle(fontSize: 15)),
-                                    SizedBox(
-                                      width: 12.0,
-                                    ),
-                                    Text(
-                                        '8:30-12:30',
-                                        style: TextStyle(fontSize: 15)),
-                                    SizedBox(
-                                      width: 14.0,
-                                    ),
-                                    Text( '13:30-17:30',
-                                     style: TextStyle(fontSize:15 ),
-                                    ),
-
-                                  ]),
-                                  SizedBox(
-                                    height: 5.0,
-                                  ),
-                                  Row(children: const [
-                                    Text('Vendredi:',
-                                      style: TextStyle(fontSize:15 ),
-                                    ),
-                                    SizedBox(
-                                      width: 29.0,
-                                    ),
-                                    Text('8:30-13:00',
-                                      style: TextStyle(fontSize:15 ),
-                                    ),
-                                    SizedBox(
-                                      width: 14.0,
-                                    ),
-                                    Text( '14:30-17:30',
-                                      style: TextStyle(fontSize:15 ),
-                                    ),
-                                  ]),
-                                  SizedBox(
-                                    height: 5.0,
-                                  ),
-                                  Row(
-                                    children: const [
-                                      Text('Samedi: fermé ',
-                                          style: TextStyle(
-                                            color: Colors.red,
-                                            fontSize: 15
-                                          )),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 5.0,
-                                  ),
-                                  Row(
-                                    children: const [
-                                      Text('Dimanche: fermé',
-                                          style: TextStyle(
-                                            color: Colors.red,
-                                            fontSize: 15
-                                          )),
-                                    ],
-                                  ),
-                                ]))
-                          ],
                         ))),
                 Container(
                     margin: const EdgeInsets.all(2.0),
                     padding: const EdgeInsets.all(5.0),
-                    decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(10.0)),
+                    decoration:
+                        BoxDecoration(color: Colors.grey[200], borderRadius: BorderRadius.circular(10.0)),
                     child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10.0)),
-                        child: ExpansionTile(
-                          title: Row(
-                            children: const <Widget>[
-                              Image(
-                                image: AssetImage('assets/images/municipalite.png'),
-                                width: 25.0,
-                                height: 25.0,
-                              ),
-                              Text('Aller à la municipalité',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18)),
+                        decoration:
+                            BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
+                        child: Theme(
+                          data: ThemeData().copyWith(dividerColor: Colors.transparent),
+                          child: ExpansionTile(
+                            title: Row(
+                              children: const <Widget>[
+                                Image(
+                                  image: AssetImage('assets/images/municipalite.png'),
+                                  width: 25.0,
+                                  height: 25.0,
+                                ),
+                                Text('Aller à la municipalité',
+                                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                              ],
+                            ),
+                            children: [
+                              Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+                                    Column(children: [
+                                      const Image(
+                                        image: AssetImage('assets/images/fileattente.jpg'),
+                                        width: 50.0,
+                                        height: 50.0,
+                                      ),
+                                      const Text(
+                                        'Personne en attente',
+                                        style: TextStyle(fontSize: 13),
+                                      ),
+                                      const SizedBox(
+                                        height: 10.0,
+                                      ),
+                                      Container(
+                                        //padding: EdgeInsets.symmetric(vertical: ),
+                                        decoration: BoxDecoration(
+                                          color: Colors.grey[200],
+                                        ),
+                                        width: 70,
+                                        height: 24,
+                                        alignment: Alignment.center,
+                                        child: const Text(
+                                          "10",
+                                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                                        ),
+                                      ),
+                                    ]),
+                                    const SizedBox(
+                                      height: 10.0,
+                                    ),
+                                    Column(children: [
+                                      const Image(
+                                        image: AssetImage('assets/images/clock.png'),
+                                        width: 50.0,
+                                        height: 50.0,
+                                      ),
+                                      const Text(
+                                        'Temps d"attente',
+                                        style: TextStyle(fontSize: 13),
+                                      ),
+                                      const SizedBox(
+                                        height: 10.0,
+                                      ),
+                                      Container(
+                                        //padding: EdgeInsets.symmetric(vertical: ),
+                                        decoration: BoxDecoration(
+                                          color: Colors.grey[200],
+                                        ),
+                                        width: 70,
+                                        height: 24,
+                                        alignment: Alignment.center,
+                                        child: const Text(
+                                          "10 min",
+                                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                                        ),
+                                      )
+                                    ]),
+                                    const SizedBox(
+                                      height: 10.0,
+                                    ),
+                                  ]))
                             ],
                           ),
-                          children: [
-                            Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Column(children:  [
-                                        Image(
-                                          image: AssetImage(
-                                              'assets/images/fileattente.jpg'),
-                                          width: 50.0,
-                                          height: 50.0,
-                                        ),
-                                        Text('Personne en attente',
-                                        style: TextStyle(fontSize: 13),
-                                        ),
-                                        SizedBox(
-                                          height: 10.0,
-                                        ),
-                                        Container(
-                                          //padding: EdgeInsets.symmetric(vertical: ),
-                                          decoration: BoxDecoration(
-                                              color: Colors.grey[200],
-                                          ),
-                                          width: 70,
-                                          height: 24,
-                                          alignment: Alignment.center,
-                                          child: Text(
-                                            "10",
-                                            style: TextStyle(fontWeight: FontWeight.bold,
-                                            fontSize: 16
-                                            ),
-                                          ),
-                                        ),
-
-                                      ]),
-                                      SizedBox(
-                                        height: 10.0,
-                                      ),
-                                      Column(children: [
-                                        Image(
-                                          image:
-                                              AssetImage('assets/images/clock.png'),
-                                          width: 50.0,
-                                          height: 50.0,
-                                        ),
-                                        Text('Temps d"attente',
-                                        style: TextStyle(fontSize: 13),
-                                        ),
-                                        SizedBox(
-                                          height: 10.0,
-                                        ),
-                                        Container(
-                                          //padding: EdgeInsets.symmetric(vertical: ),
-                                          decoration: BoxDecoration(
-                                            color: Colors.grey[200],
-                                          ),
-                                          width: 70,
-                                          height: 24,
-                                          alignment: Alignment.center,
-                                          child: Text(
-                                            "10 min",
-                                            style: TextStyle(fontWeight: FontWeight.bold,
-                                            fontSize: 16
-                                            ),
-                                          ),
-                                        )
-                                      ]),
-                                      SizedBox(
-                                        height: 10.0,
-                                      ),
-                                    ]))
-                          ],
                         ))),
                 Container(
-                    margin: const EdgeInsets.all(2.0),
-                    padding: const EdgeInsets.all(5.0),
-                    width: MediaQuery.of(context).size.width,
-                    height: 250,
-                    decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(10.0)),
-                       child: GoogleMap(
-                          onMapCreated: _onMapCreated,
-                          initialCameraPosition: CameraPosition(
-                            target: _center,
-                            zoom: 18.0,
-                          ),
-                         markers: {
-                            Marker(
-                              markerId: MarkerId("source"),
-                              position: _center
-                            )
-                         },
-                        ),
-
+                  margin: const EdgeInsets.all(2.0),
+                  padding: const EdgeInsets.all(5.0),
+                  width: MediaQuery.of(context).size.width,
+                  height: 250,
+                  decoration:
+                      BoxDecoration(color: Colors.grey[200], borderRadius: BorderRadius.circular(10.0)),
+                  child: GoogleMap(
+                    onMapCreated: _onMapCreated,
+                    initialCameraPosition: const CameraPosition(
+                      target: _center,
+                      zoom: 18.0,
                     ),
+                    markers: {const Marker(markerId: MarkerId("source"), position: _center)},
+                  ),
+                ),
                 Container(
                     margin: const EdgeInsets.all(2.0),
                     padding: const EdgeInsets.all(5.0),
                     child: Container(
                         child: Column(children: [
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Column(
-                              children: [
-                                Text("Rejoignez nous sur les réseaux",
-                                style: TextStyle(fontSize: 18),
-                                ),
-                              ],
-
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Column(
+                          children: const [
+                            Text(
+                              "Rejoignez nous sur les réseaux",
+                              style: TextStyle(fontSize: 18),
                             ),
-                          ),
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Column(
-                              children: [
-                                Text("sociaux:",
-                                  style: TextStyle(fontSize: 18),
-
-                                ),
-
-                              ],
+                          ],
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Column(
+                          children: const [
+                            Text(
+                              "sociaux:",
+                              style: TextStyle(fontSize: 18),
                             ),
-                          ),
+                          ],
+                        ),
+                      ),
                       Row(children: [
                         Container(
-                          //padding: EdgeInsets.symmetric(vertical: ),
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(6),
-
-                          ),
-                          width: 30,
-                          height: 30,
-                          alignment: Alignment.center,
-                          child: IconButton(
-                            icon: Icon(
-                              Icons.facebook,
-                              color: Colors.white,
-                              size: 15,
-                            ),
-
-                            onPressed: () {
-                              // do something
-                            },
-                          )
-                        ),
-
-                        SizedBox(
-                          width: 4.0, // <-- SEE HERE
-                        ),
-                        Container(
-                          //padding: EdgeInsets.symmetric(vertical: ),
+                            //padding: EdgeInsets.symmetric(vertical: ),
                             decoration: BoxDecoration(
-                              color: Colors.blue[200],
+                              color: Colors.blue,
                               borderRadius: BorderRadius.circular(6),
-
                             ),
                             width: 30,
                             height: 30,
                             alignment: Alignment.center,
                             child: IconButton(
-                              icon: Icon(
+                              icon: const Icon(
+                                Icons.facebook,
+                                color: Colors.white,
+                                size: 15,
+                              ),
+                              onPressed: () {
+                                // do something
+                              },
+                            )),
+                        const SizedBox(
+                          width: 4.0, // <-- SEE HERE
+                        ),
+                        Container(
+                            //padding: EdgeInsets.symmetric(vertical: ),
+                            decoration: BoxDecoration(
+                              color: Colors.blue[200],
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            width: 30,
+                            height: 30,
+                            alignment: Alignment.center,
+                            child: IconButton(
+                              icon: const Icon(
                                 Typicons.twitter,
                                 color: Colors.white,
                                 size: 15,
                               ),
-
                               onPressed: () {
                                 // do something
                               },
-                            )
-                        ),
-                        SizedBox(
-                          width: 4.0, // <-- SEE HERE
-                        ),
-                  Container(
-                    //padding: EdgeInsets.symmetric(vertical: ),
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(6),
-
-                      ),
-                      width: 30,
-                      height: 30,
-                      alignment: Alignment.center,
-                      child: IconButton(
-                        icon: Icon(
-                          FeatherIcons.youtube,
-                          color: Colors.white,
-                          size: 15,
-                        ),
-
-                        onPressed: () {
-                          // do something
-                        },
-                      )
-                  ),
-                        SizedBox(
+                            )),
+                        const SizedBox(
                           width: 4.0, // <-- SEE HERE
                         ),
                         Container(
-                          //padding: EdgeInsets.symmetric(vertical: ),
+                            //padding: EdgeInsets.symmetric(vertical: ),
                             decoration: BoxDecoration(
-                              color: Colors.pink,
+                              color: Colors.red,
                               borderRadius: BorderRadius.circular(6),
-
                             ),
                             width: 30,
                             height: 30,
                             alignment: Alignment.center,
                             child: IconButton(
-                              icon: Icon(
+                              icon: const Icon(
+                                FeatherIcons.youtube,
+                                color: Colors.white,
+                                size: 15,
+                              ),
+                              onPressed: () {
+                                // do something
+                              },
+                            )),
+                        const SizedBox(
+                          width: 4.0, // <-- SEE HERE
+                        ),
+                        Container(
+                            //padding: EdgeInsets.symmetric(vertical: ),
+                            decoration: BoxDecoration(
+                              color: Colors.pink,
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            width: 30,
+                            height: 30,
+                            alignment: Alignment.center,
+                            child: IconButton(
+                              icon: const Icon(
                                 FeatherIcons.instagram,
                                 color: Colors.white,
                                 size: 15,
                               ),
-
                               onPressed: () {
                                 // do something
                               },
-                            )
-                        ),
+                            )),
                       ]),
                     ])))
               ]));
@@ -514,10 +468,8 @@ class HomeScreen extends StatelessWidget {
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Accueil'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home), label: 'Mes observations'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home), label: 'Administration'),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Mes observations'),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Administration'),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profil')
           ],
           currentIndex: _selectedIndex,
